@@ -13,21 +13,25 @@
  * limitations under the License.
  */
 
-'use strict';
+"use strict"
 
 // [START app]
-const express = require('express');
+const express = require("express")
+const uuid = require("uuid")
 
-const app = express();
+const app = express()
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!').end();
-});
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .send(`Hello, world! ${uuid()}`)
+    .end()
+})
 
 // Start the server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
-});
+  console.log(`App listening on port ${PORT}`)
+  console.log("Press Ctrl+C to quit.")
+})
 // [END app]
